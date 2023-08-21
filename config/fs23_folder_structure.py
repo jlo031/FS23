@@ -21,13 +21,15 @@ WORK_DIR = pathlib.Path(__file__).parent.parent
 # Everything else is based off of this
 # The main folder is set depending on the platform you are working on
 
-if socket.gethostname() == 'rcm2.phys.uit.no':
-    DATA_DIR = pathlib.Path('/Data/jlo031/ResearchData/IFT/EarthObservation/belgica_bank')
+if socket.gethostname() == 'rcm1.phys.uit.no':
+    DATA_DIR = pathlib.Path('/Data/jlo031/ResearchData/IFT/EarthObservation/belgica_bank/FS23_DATA_TRANSFER')
+elif socket.gethostname() == 'rcm2.phys.uit.no':
+    DATA_DIR = pathlib.Path('/Data/jlo031/ResearchData/IFT/EarthObservation/belgica_bank/FS23_DATA_TRANSFER')
 elif socket.gethostname() == 'gizmo' or socket.gethostname() == 'sully':
     DATA_DIR = pathlib.Path('/media/Data/FS23')
 
 # This directory is for usage on rcm2 server
-SCRATCH_DIR = pathlib.Path('/scratch/jlo031/CIRFA_22/')
+SCRATCH_DIR = pathlib.Path('/scratch/jlo031/FS23/')
 
 # -------------------------------------------------------------------------- #
 
@@ -57,6 +59,14 @@ S1_GEO_DIR    = S1_DIR / 'geocoded'
 # -------------------------------------------------------------------------- #
 
 # Folders on /scratch for batch processing
+
+if socket.gethostname() == 'rcm1.phys.uit.no':
+    S1_FEAT_DIR = SCRATCH_DIR / 'Sentinel-1/features'
+    S1_RGB_DIR  = SCRATCH_DIR / 'Sentinel-1/RGB'
+
+    S1_FEAT_DIR.mkdir(parents=True, exist_ok=True)
+    S1_RGB_DIR.mkdir(parents=True, exist_ok=True)
+
 
 if socket.gethostname() == 'rcm2.phys.uit.no':
     S1_FEAT_DIR = SCRATCH_DIR / 'Sentinel-1/features'

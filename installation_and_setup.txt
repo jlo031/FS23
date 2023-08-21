@@ -1,0 +1,42 @@
+# clone the 3 required repos
+# create the environment
+conda create -y -n FS23 gdal
+
+# activate the environment
+conda activate FS23
+
+
+
+
+
+# install other required packages
+conda install -y ipython scipy loguru lxml python-dotenv
+
+# create .env file within S1_processing/src/S1_processing
+
+# install S1_processing
+cd S1_processing
+pip install .
+
+
+
+
+# install other required packages
+conda install -y python-dotenv pillow
+
+# install geocoding
+cd geocoding
+pip install .
+
+
+
+# install other required packages
+conda install -y dateparser
+pip install sentinelsat geojson shapely chardet
+conda install -y -c anaconda requests
+conda install -y -c conda-forge python-keycloak
+
+
+# install geocoding
+cd satsearch_and_download
+pip install .

@@ -1,42 +1,58 @@
-# clone the 3 required repos
-# create the environment
+# Set up the environment for the FS23 processing chain on rcm2:
+
+
+# 1) Clone the 3 required repositories
+
+git clone https://github.com/jlo031/satsearch_and_download
+git clone https://github.com/jlo031/S1_processing
+git clone https://github.com/jlo031/geocoding
+
+
+
+# 2) Create the environment
+
 conda create -y -n FS23 gdal
 
-# activate the environment
-conda activate FS23
+
+# 3) Activate the environment
+conda activate FS23 
 
 
+# 4) install other required packages for the different repos
 
 
-
-# install other required packages
-conda install -y ipython scipy loguru lxml python-dotenv
-
-# create .env file within S1_processing/src/S1_processing
-
-# install S1_processing
-cd S1_processing
-pip install .
-
-
-
-
-# install other required packages
-conda install -y python-dotenv pillow
-
-# install geocoding
-cd geocoding
-pip install .
-
-
-
-# install other required packages
+# for satsearch_and_download
 conda install -y dateparser
 pip install sentinelsat geojson shapely chardet
 conda install -y -c anaconda requests
 conda install -y -c conda-forge python-keycloak
 
+# for S1_processing
+conda install -y ipython scipy loguru lxml python-dotenv
 
-# install geocoding
+# for geocoding
+conda install -y python-dotenv pillow
+
+
+# 5) install satsearch_and_download
 cd satsearch_and_download
 pip install .
+
+
+
+# 6) install geocoding
+cd ../geocoding
+pip install .
+
+
+
+# 7) Install S1_processing !NB! GPT path needed!
+
+# create .env file within S1_processing/src/S1_processing that points to GPT on rcm2:
+GPT='/opt/snap/bin/gpt'
+
+# install S1_processing
+cd ../S1_processing
+pip install .
+
+

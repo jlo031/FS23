@@ -141,8 +141,8 @@ for i,S1_base in enumerate(S1_product_list):
     if final_output_path.is_file() and not overwrite:
         logger.info('Product already processed for current settings')
     else:
-        subprocess.call(f"python S1_extract_features.py {S1_base} -ML {ML}", shell=True)
-        subprocess.call(f"python S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_extract_features.py {S1_base} -ML {ML}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps}", shell=True)
 
 # --------------- #
 
@@ -157,9 +157,9 @@ for i,S1_base in enumerate(S1_product_list):
     if final_output_path_1.is_file() and final_output_path_2.is_file() and not overwrite:
         logger.info('Product already processed for current settings')
     else:
-        subprocess.call(f"python S1_extract_features.py {S1_base} -ML {ML}", shell=True)
-        subprocess.call(f"python S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps1}", shell=True)
-        subprocess.call(f"python S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps2}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_extract_features.py {S1_base} -ML {ML}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps1}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps2}", shell=True)
 
 # --------------- #
 
@@ -174,9 +174,9 @@ for i,S1_base in enumerate(S1_product_list):
     if final_output_path_1.is_file() and final_output_path_2.is_file() and not overwrite:
         logger.info('Product already processed for current settings')
     else:
-        subprocess.call(f"python S1_extract_features.py {S1_base} -ML {ML}", shell=True)
-        subprocess.call(f"python S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps1}", shell=True)
-        subprocess.call(f"python S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps2}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_extract_features.py {S1_base} -ML {ML}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps1}", shell=True)
+        subprocess.call(f"python /home/jlo031/work/FS23/S1_geocode_features.py {S1_base} -ML {ML} -pixel_spacing {ps2}", shell=True)
 
 # --------------- #
 

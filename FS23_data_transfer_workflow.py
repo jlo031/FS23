@@ -174,7 +174,7 @@ n_settings = len(settings)
 for s in np.arange(1,n_settings+1):
     ML_current = settings[s]['ML']
     PS_current = settings[s]['PS']
-    settings[s]['dir'] = FS23.S1_GEO_DIR / f"ML_{ML_current}_pixepspacing_{PS_current}"
+    settings[s]['dir'] = FS23.S1_GEO_DIR / f"ML_{ML_current}_pixelspacing_{PS_current}"
     settings[s]['dir'].mkdir(parents=True, exist_ok=True)
 
 # --------------- #

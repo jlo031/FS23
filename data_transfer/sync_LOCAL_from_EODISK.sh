@@ -1,4 +1,4 @@
-# ---- This is <sync_local_from_EODisk.sh> ----
+# ---- This is <sync_LOCAL_from_EODISK.sh> ----
 #
 # Synchronize local "geocoded" data folder with corresponding folder on EO_disk
 #
@@ -23,7 +23,7 @@ PS='80'
 SETTINGS_DIR="ML_${ML}_pixepspacing_${PS}"
 
 echo " "
-echo "Running 'sync_local_from_EODisk.sh'"
+echo "Running 'sync_LOCAL_from_EODISK.sh'"
 echo "# ------------------------------- #"
 echo " "
 
@@ -34,16 +34,19 @@ echo " "
 
 
 # build full directories for current settings
-sync_from_dir="${LOCAL_DATA_DIR}/ML_${ML}_pixelspacing_${PS}"
+sync_from_dir="${EODISK_DATA_DIR}/ML_${ML}_pixelspacing_${PS}"
 sync_to_dir="${LOCAL_DATA_DIR}/ML_${ML}_pixelspacing_${PS}"
 
 echo "sync_from_dir: ${sync_from_dir}"
 echo "sync_to_dir: ${sync_to_dir}"
 echo " "
 
+echo "RUNNING: rsync -avz ${sync_from_dir}/ ${sync_to_dir}"
+echo " "
 rsync -avz ${sync_from_dir}/ ${sync_to_dir}
+##rsync -avz --info=progress2 --info=name0 ${sync_from_dir}/ ${sync_to_dir}
 
 # -------------------------------------------------------------------------- #
 # -------------------------------------------------------------------------- #
 
-# ---- End of <sync_local_from_EODisk.py> ----
+# ---- End of <sync_LOCAL_from_EODISK.sh> ----

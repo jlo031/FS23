@@ -1,6 +1,6 @@
 # ---- This is <sync_EODISK_from_RD.sh> ----
 #
-# Synchronize EO_disk folder from remote ResearchData
+# Synchronize EO_disk folder from remote ResearchData on rcm2
 #
 # -------------------------------------------------------------------------- #
 # -------------------------------------------------------------------------- #
@@ -17,13 +17,13 @@ LOCAL_DATA_DIR="/media/Data/FS23/satellite_data/Sentinel-1/geocoded"
 
 # settings
 ML='1x1'
-PS='80'
+PS='40'
 
 # specify settings
 SETTINGS_DIR="ML_${ML}_pixepspacing_${PS}"
 
 echo " "
-echo "Running 'sync_local_from_EODisk.sh'"
+echo "Running 'sync_EODISK_from_RD.sh'"
 echo "# ------------------------------- #"
 echo " "
 
@@ -34,7 +34,7 @@ echo " "
 
 
 # build full directories for current settings
-sync_from_dir="${REMOTE_DATA_DIR}/ML_${ML}_pixepspacing_${PS}"
+sync_from_dir="${REMOTE_DATA_DIR}/ML_${ML}_pixelspacing_${PS}"
 sync_to_dir="${EODISK_DATA_DIR}/ML_${ML}_pixelspacing_${PS}"
 
 echo "sync_from_dir: ${sync_from_dir}"
@@ -42,12 +42,10 @@ echo "sync_to_dir: ${sync_to_dir}"
 echo " "
 
 echo "RUNNING: rsync -avz jlo031@${REMOTE_SERVER}:${sync_from_dir}/ ${sync_to_dir}"
+echo " "
 rsync -avz jlo031@${REMOTE_SERVER}:${sync_from_dir}/ ${sync_to_dir}
 
-exit 
-
-
 # -------------------------------------------------------------------------- #
 # -------------------------------------------------------------------------- #
 
-# ---- End of <sync_EODISK_from_RD.py> ----
+# ---- End of <sync_EODISK_from_RD.sh> ----

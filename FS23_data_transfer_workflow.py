@@ -106,7 +106,7 @@ for zip_file in zip_file_list:
     zip_ref.close()
 
     # remove zip_path
-    zip_path.unlink(missing_ok=True)
+    ##zip_path.unlink(missing_ok=True)
 
 # --------------- #
 

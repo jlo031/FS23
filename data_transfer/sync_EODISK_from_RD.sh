@@ -16,8 +16,8 @@ EODISK_DATA_DIR="/media/jo/EO_disk/data/FS23/satellite_data/Sentinel-1/geocoded"
 LOCAL_DATA_DIR="/media/Data/FS23/satellite_data/Sentinel-1/geocoded"
 
 # settings
-ML='1x1'
-PS='40'
+ML='5x5'
+PS='200'
 
 # specify settings
 SETTINGS_DIR="ML_${ML}_pixepspacing_${PS}"

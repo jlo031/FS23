@@ -147,19 +147,19 @@ settings = dict()
 
 settings[1] = dict()
 settings[2] = dict()
-settings[3] = dict()
+##settings[3] = dict()
 ##settings[4] = dict()
 ##settings[5] = dict()
 ##settings[6] = dict()
 ##settings[7] = dict()
 
 
-settings[1]['ML'] = '5x5'
-settings[1]['PS'] = 200
-settings[2]['ML'] = '1x1'
-settings[2]['PS'] = 80
-settings[3]['ML'] = '9x9'
-settings[3]['PS'] = 400
+settings[1]['ML'] = '9x9'
+settings[1]['PS'] = 400
+settings[2]['ML'] = '5x5'
+settings[2]['PS'] = 200
+##settings[3]['ML'] = '1x1'
+##settings[3]['PS'] = 80
 ##settings[4]['ML'] = '1x1'
 ##settings[4]['PS'] = 40
 ##settings[5]['ML'] = '1x1'
